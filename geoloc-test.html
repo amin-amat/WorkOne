@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+   <script>
+
+var base_url = 'http://ip-api.com/json/';
+
+var dataInfo = (function () {
+    var dataInfo = null;
+    $.ajax({
+        'async': true,
+        'global': false,
+        'url': base_url,
+        'dataType': "json",
+        'success': function (data) {
+            dataInfo = data;
+        }
+    });
+    return dataInfo;
+}) ();
+   
+function writeTest() {
+     'use strict';
+     var webplace = dataInfo(isp);
+     document.getElementById('main-data-window').innerHTML = webplace;
+    }
+
+   function writeCountry(){
+   	  'use strict';
+      var country = dataInfo.country;
+      document.getElementById('main-data-window').innerHTML = country;
+    }
+
+    $(document).ready(function() {
+     writeTest();
+   });
+</script>
+</head>
+<body>
+	<input type="button" onclick="writeCountry();" >
+    <div id="main-data-window">TEST</div>
+
+
+</body>
