@@ -1,0 +1,71 @@
+HTML body {width:1430px;margin:0 auto;background:#E0EEEE;}
+
+#start		{position: absolute;left: 45%;right: 50%;top: 100px;font-size: 40px;border-radius: 8px;background: white;border: thin solid #333;display: none;}
+#board		{height: auto;width: 1430px;border: 1px solid #C0D9D9;border-radius: 5px;background-color: white;text-align: center;overflow: hidden;display: none;margin: 30px auto;}
+#ticker,
+#tally,
+#congrats {
+	display:none;
+}
+#tally		{font-size: 18px;font-weight: bold;text-transform: uppercase;float: left;margin-right: 8px;}
+#ticker		{font-size: 20px;width: 50px;position: inherit;float: left;}
+#congrats	{font-size:42px;color: red;font-weight: bold;}
+.card		{height: 100px;width: 100px;border: 2px solid #d3d3d3;border-radius: 5px;margin: 3px;float:left;overflow: hidden;}
+.cardOut	{background-color: #F0F8FF !important; background: none !important;}
+
+.black,
+.navy,
+.red,
+.blue,
+.green,
+.orange,
+.yellow,
+.lime,
+.gray,
+.violet,
+.fushia,
+.brown,
+.gold,
+.bronze,
+.platinum,
+.ochre,
+.wheat,
+.tomato,
+.tan,
+.snow,
+.turquoise,
+.springgreen,
+.skyblue,
+.maroon,
+.moccasin,
+.linen {
+	width:100px;
+	height:100px;
+}
+
+.black		{background: black;}
+.navy		{background: navy;}
+.red		{background: red;}
+.blue		{background: blue;}
+.green		{background: green;}
+.orange		{background: orange;}
+.yellow		{background: yellow;}
+.lime 		{background: lime;}
+.gray		{background: gray;}
+.violet		{background: violet;}
+.fushia		{background: fuchsia;}
+.brown		{background: brown;}
+.gold 		{background: gold;}
+.bronze 	{background: blue;}
+.platinum 	{background: whitesmoke;}
+.ochre 		{background: goldenRod;}
+.wheat 		{background: url('http://haut3pink.files.wordpress.com/2014/03/derelicte-party.jpg') no-repeat;background-size: 100%;}
+.tomato 	{background: url('https://wearwhatyoulike.files.wordpress.com/2011/06/mugatu1.jpg') no-repeat;background-size: 150%;}
+.tan 		{background: url('http://a1.web.wt-cdn.com/post_items/images/000/024/567/large/zoolander.jpg') no-repeat;background-size: 250%;}
+.snow 		{background: url('http://media1.popsugar-assets.com/files/2014/09/16/663/n/1922564/48b8245059420cad_thumb_temp_image145852281410878603.preview_tall/i/Zoolander-Movie-GIFs.jpg') no-repeat;background-size: 100%;}
+.turquoise 	{background: url('https://pbs.twimg.com/profile_images/616002132/dz.jpg') no-repeat;background-size: 100%;}
+.springgreen {background: url('http://www.freddynietzsche.com/wp-content/uploads/sites/9/2009/12/Zoolander_001.JPG') no-repeat;background-size: 110%;}
+.skyblue 	{background: skyBlue;}
+.maroon 	{background: maroon;}
+.moccasin 	{background: moccasin;}
+.linen  	{background: linen;}
