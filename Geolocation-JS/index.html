@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/libs/jquery-1.10.2.min.js"></script>
+		<script src="js/libs/handlebars-v1.3.0.js"></script>
+		<script src="js/geolocation.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		<link rel="stylesheet" href="css/geolocation.css">
+	</head>
+	<body class="container">
+		<h1 id="title">GeoLocation Test</h1>
+		<hr class="divider"></hr>
+		<div class="row">
+ 	<div class="large-6 medium-6 small-6 columns round" id="block1">
+		<section id="mainContent"> </section>
+
+		<script type="text/x-handlebars" id="index">
+				<section id="geoLocationContainer" class=""></section>
+				<menu>
+					<button onclick="getMyLocation()" id="btnMyLocation" class="small button">My Location</button>
+					<button onclick="resetLocationDetails()" id="btnResetLocation" class="small button">Reset</button>
+				</menu>
+		</script>
+
+		<script type="text/x-handlebars" id="locationInfo">
+			<h4>Estimated location</h4>
+
+			<table align="center" class="empty">
+				<tbody>
+					<tr>
+						<td class="field_name">IP</td>
+						<td id="location_query" class="location_value">{{query}}</td>
+						<td><button class="help">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Country</td>
+						<td id="location_country" class="location_value">{{country}}</td>
+						<td><button class="help">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Region</td>
+						<td id="location_regionName" class="location_value">{{regionName}}</td>
+						<td><button class="help">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">City</td>
+						<td id="location_city" class="location_value">{{city}}</td>
+						<td><button class="help">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Time Zone</td>
+						<td id="location_timezone" class="location_value">{{timezone}}</td>
+						<td><button class="help">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Latitude</td>
+						<td id="location_lat" class="location_value">{{lat}}</td>
+						<td><button class="help">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Longitude</td>
+						<td id="location_lon" class="location_value">{{lon}}</td>
+						<td><button class="help">?</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</script>
+		<div id="map-canvas-user"></div>
+	</div>
+ 	<div class="large-6 medium-6 small-6 columns round2" id="block2">
+ 		<section id="mainContent2"> </section>
+
+		<script type="text/x-handlebars" id="index2">
+				<section id="geoLocationContainer2" class=""></section>
+				<menu>
+				<input type="text" id="urlLocate" class="small button" placeholder="Type in url.">
+					<button onclick="getMyLocation2()" id="btnMyLocation" class="small button">Locate</button>
+					<button onclick="resetLocationDetails2()" id="btnResetLocation" class="small button">Reset</button>
+				</menu>
+		</script>
+
+		<script type="text/x-handlebars" id="locationInfo2">
+			<h4>Estimated location</h4>
+
+			<table align="center" class="empty">
+				<tbody>
+					<tr>
+						<td class="field_name">IP</td>
+						<td id="location_query2" class="location_value2">{{query}}</td>
+						<td><button class="help2">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Country</td>
+						<td id="location_country2" class="location_value2">{{country}}</td>
+						<td><button class="help2">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Region</td>
+						<td id="location_regionName2" class="location_value2">{{regionName}}</td>
+						<td><button class="help2">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">City</td>
+						<td id="location_city2" class="location_value2">{{city}}</td>
+						<td><button class="help2">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Time Zone</td>
+						<td id="location_timezone2" class="location_value2">{{timezone}}</td>
+						<td><button class="help2">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Latitude</td>
+						<td id="location_lat2" class="location_value2">{{lat}}</td>
+						<td><button class="help2">?</button></td>
+					</tr>
+					<tr>
+						<td class="field_name">Longitude</td>
+						<td id="location_lon2" class="location_value2">{{lon}}</td>
+						<td><button class="help2">?</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</script>
+		<div id="map-canvas-host"></div>
+ 	</div>
+ </div>
+	</body>
+</html>

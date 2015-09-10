@@ -1,0 +1,121 @@
+* {
+  text-align: center;
+  font-size: 20px;
+  /* PLANNED ON USING THIS BUT IT CONFLICTS WITH GOOGLE MAP
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  */ }
+
+button {
+  margin: 0 10px; }
+
+.location_value {
+  color: red; }
+
+#title {
+  font-size: 48px; }
+
+#btnMyLocation, #btnResetLocation {
+  width: 105px;
+  /*height:50;*/ }
+
+table > tbody > tr > td.field_name {
+  text-align: left; }
+
+table > tbody > tr > td.location_value {
+  width: 200px; }
+
+table.empty .help {
+  visibility: hidden; }
+
+.button.small {
+  height: 37px;
+  padding-top: 0.505rem;
+  padding-bottom: 1.275rem;
+  font-size: 15px; }
+
+.round, .round2 {
+  border-radius: 8px;
+  border: thin solid lightgray;
+  float: left;
+  margin-right: 15px;
+  height: 80px;
+  overflow: hidden;
+  }
+
+.row {
+  width: 100%;
+  margin: 0 auto; }
+
+#mainContent, #mainContent2 {
+  width: 450px; }
+
+#urlLocate {
+  width: 120px;
+  padding: 0;
+  height: 33px; }
+
+#map-canvas-user, #map-canvas-host {
+  width: 420px;
+  height: 270px;
+  margin: 15px;
+  border-radius: 12px; }
+
+@media only screen and (min-width: 950px) {
+  .row {
+    width: 1000px;
+    margin: 0 auto;
+    transition: left 0.5s; }
+
+  .round, .round2 {
+    width: 450px; } }
+@media only screen and (min-width: 730px) and (max-width: 949px) {
+  .row {
+    width: 800px;
+    margin: 0 auto; }
+
+  .round, .round2 {
+    width: 350px; }
+
+  #mainContent, #mainContent2 {
+    width: 350px; }
+
+  #map-canvas-user, #map-canvas-host {
+    width: 320px;
+    height: 250px; }
+
+  #urlLocate {
+    width: 90px;
+    float: left;
+    margin-left: -20px; }
+
+  button {
+    margin: 0 6px; }
+
+  #btnMyLocation, #btnResetLocation {
+    float: left; } }
+@media only screen and (min-width: 320px) and (max-width: 729px) {
+  .round, .round2 {
+    margin-bottom: 20px;
+    width: 320px; }
+
+  .round2 {
+    height: 115px; }
+
+  #mainContent, #mainContent2 {
+    width: 320px; }
+
+  #map-canvas-user, #map-canvas-host {
+    width: 300px;
+    height: 250px;
+    margin-top: 20px; }
+
+  #urlLocate {
+    width: 250px;
+    margin: 0 0 10px;
+    float: left; }
+
+  #btnMyLocation, #btnResetLocation {
+    float: left; } }
