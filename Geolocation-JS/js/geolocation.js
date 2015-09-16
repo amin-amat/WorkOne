@@ -118,9 +118,9 @@ function resetLocationDetails() {
             map.setCenter(myLatlng);
             map.setZoom(3);
         resetMarkers();
-	$("table").addClass('empty').toggle();
+	$("table").addClass('empty');
 	$("#geoLocationContainer").css('display','none');
-	$("#map-canvas-user").css('display','none');
+	$("#map-canvas-user").css('visibility','hidden');
 	$("#block1").css('height','100px').animate();
 }
 
@@ -140,7 +140,7 @@ function resetLocationDetails2() {
            resetMarkers();
 	$("table").addClass('empty');
 	$("#geoLocationContainer2").css('display','none');
-	$("#map-canvas-host").css('display','none');
+	$("#map-canvas-host").css('visibility','hidden');
 	$("#block2").css('height','100px').animate();
 }
 
