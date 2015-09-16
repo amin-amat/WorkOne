@@ -172,6 +172,19 @@ for ($j = 0; $j < 100; $j++) {
 	curl_close($curl);
 	$json            = json_decode($output);
   $c[$j]           = $json;
+
+  if($j === 25){
+    echo "25%...";
+  }
+  elseif($j === 50){
+    echo "50%...";
+  }
+  elseif($j === 75){
+    echo "75%...";
+  }
+  else{
+    echo ".";
+  }
 }
 
 //Uncomment for reference use
