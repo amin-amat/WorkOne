@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+	#table {width:208px;border:thin solid grey;height:auto; overflow:hidden;}
+	.block {width:50px; height: 50px;display:block;border: thin solid black;float: left;}
+	.selected {background: red;}
+	#playnumbers {opacity:0;}
+	</style>
+</head>
+
+<body>
+	<div id="table"></div>
+	<button id="playnumbers" onclick="matchWin()">PLAY THESE NUMBERS</button>
+
+	<script>
+	var tabs = [];
+	var numbers = [];
+	var userNum = [];
+	var winNum = [];
+	var counter = 0;
+	buildTable(16);
+
+	function buildTable(squares) {
+		//create initial array to later shuffle
+		for(i = 0; i < squares; i++){
+			numbers.push(i+1);
+			}
+
+		// shuffle prototype
+		Array.prototype.shuffle =  function() {
+				var i = this.length, j, temp;
+				while ( --i )
+					{
+						j = Math.floor( Math.random() * (i - 1) );
+						temp = this[i];
+						this[i] = this[j];
+						this[j] = temp;
+					}
+				}
+		// shuffle numbers array
+		numbers.shuffle();
+		// assign to blocks
+		for(i = 0; i < numbers.length; i++){
+				document.getElementById("table").innerHTML += "<div class='block' id='square " +  numbers[i] + "' >" +  numbers[i] + "</div>";
+			}
+		//console.log(tabs);
+		//console.log(numbers);
+		for(i = 0; i < 4; i++){
+			randomizer = Math.round(Math.random()* numbers.length);
+			winNum.push(numbers[randomizer]);
+		}
+		//winNum.toString();
+		console.log(winNum);
+	}
+
+	function matchWin() {
+		// generate winning 4 numbers
+		winNum.sort (function(a,b) {
+			return a-b
+		});
+		userNum.sort (function(a,b) {
+			return a-b
+		});
+
+		if(winNum.toString() === userNum.toString()) {
+			alert("You win!");
+		} else {
+			alert("You lose!");
+		}
+		location.reload();
+	}
+
+
+	// on click block function
+	$('.block').click(function() {
+		if ( $(this).hasClass('selected') ) {
+			$(this).removeClass('selected');
+			counter-=1;
+			userNum.pop($(this).html());
+			//console.log(userNum);
+			//console.log(counter);
+		} else {
+			if(counter < 4){
+				$(this).addClass('selected');
+				counter+=1;
+				number = $(this).html();
+				userNum.push(number);
+				//console.log(counter);
+				//console.log(userNum);
+					if(counter == 4) {
+						$('#playnumbers').fadeTo("slow",1.0);
+					}
+			}
+			else{
+				alert('You can only choose 4 squares!');
+			}
+		}
+		
+	});
+
+	</script>
+</body>
+
+</html>
