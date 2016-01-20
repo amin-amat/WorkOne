@@ -30,65 +30,61 @@
 
 		// shuffle prototype
 		Array.prototype.shuffle =  function() {
-				var i = this.length, j, temp;
-				while ( --i )
-					{
-						j = Math.floor( Math.random() * (i - 1) );
-						temp = this[i];
-						this[i] = this[j];
-						this[j] = temp;
-					}
+			var i = this.length, j, temp;
+			while ( --i )
+				{
+					j = Math.floor( Math.random() * (i - 1) );
+					temp = this[i];
+					this[i] = this[j];
+					this[j] = temp;
 				}
+			}
 		// shuffle numbers array
 		numbers.shuffle();
 		// assign to blocks
 		for(i = 0; i < numbers.length; i++){
-				document.getElementById("table").innerHTML += "<div class='block' id='square " +  numbers[i] + "' >" +  numbers[i] + "</div>";
+			document.getElementById("table").innerHTML += "<div class='block' id='square " +  numbers[i] + "' >" +  numbers[i] + "</div>";
 			}
-		//console.log(tabs);
-		//console.log(numbers);
 		for(i = 0; i < 4; i++){
 			randomizer = Math.round(Math.random()* numbers.length);
 			winNum.push(numbers[randomizer]);
 		}
-		//winNum.toString();
+		// print winning numbers to console
 		console.log(winNum);
 	}
 
 	function matchWin() {
-		// generate winning 4 numbers
+		// sort both arrays to later compare
 		winNum.sort (function(a,b) {
 			return a-b
 		});
 		userNum.sort (function(a,b) {
 			return a-b
 		});
-
+		// compare the 2 arrays, if a match user wins
 		if(winNum.toString() === userNum.toString()) {
 			alert("You win!");
 		} else {
 			alert("You lose!");
 		}
+		// auto reload of page to start again
 		location.reload();
 	}
-
 
 	// on click block function
 	$('.block').click(function() {
 		if ( $(this).hasClass('selected') ) {
 			$(this).removeClass('selected');
 			counter-=1;
+			// eliminate from array user chosen number
 			userNum.pop($(this).html());
-			//console.log(userNum);
-			//console.log(counter);
 		} else {
 			if(counter < 4){
 				$(this).addClass('selected');
 				counter+=1;
 				number = $(this).html();
+				// save to array user chosen number
 				userNum.push(number);
-				//console.log(counter);
-				//console.log(userNum);
 					if(counter == 4) {
 						$('#playnumbers').fadeTo("slow",1.0);
 					}
