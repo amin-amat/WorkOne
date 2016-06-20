@@ -1,3 +1,6 @@
+/*
+Find duplicate values in points array, sort the values and print out the 2nd highest value.
+*/
 <script>
 var points = [40, 100, 1, 5, 25, 10,100,4,12,50];
 document.getElementById("demo").innerHTML = points;

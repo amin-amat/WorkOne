@@ -1,3 +1,4 @@
+/*
 Inside the function, you need to return an anonymous function based on the number that the user selected. Each of your three anonymous functions should contain a boarding alert message:
 If the user selects 1:
 You selected the Vines of Doom!
@@ -8,7 +9,7 @@ The Caves of Catastrophe!
 Assume the user’s choice has already been stored as 1, 2, or 3, and is passed in as the userChoice parameter. Make sure that you return all message functions as anonymous functions, instead of stored in variables. You do not need to call the function at the end.
  
 Code:
-
+*/
 <script>
 userChoice = prompt('Select 1, 2 or 3');
 
