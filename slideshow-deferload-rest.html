@@ -70,7 +70,7 @@
     $.ajax({
       crossDomain: true,
       type: "GET",
-      url: "https://api.yourwebiste.com/api/service/2.0/slideshow/content?partnerId=7eef498c-f7fa-4f7c-81fd-b1cc53ac7ebc&contentid=17103&includeLang=en",
+      url: "https://api.[yourwebsite].com/api/service/2.0/slideshow/content?partnerId=7eef498c-f7fa-4f7c-81fd-b1cc53ac7ebc&contentid=17103&includeLang=en",
       dataType:"jsonp",
       contentType: "application/jsonp"
     })
@@ -91,7 +91,7 @@
         slideBox = '<li value="'+i+'" class="slide">';
         slideBox += '<div class="left"><span class="title">'+ data[0].slides[i].title +'</span><br>';
         slideBox += data[0].slides[i].body +'</div>';
-        slideBox += '<div class="right"><img src="" data-src="http://www.healthline.com'+ data[0].slides[i].image.imageUrl +'" class="image"></div>';
+        slideBox += '<div class="right"><img src="" data-src="http://www.[yourwebsite].com'+ data[0].slides[i].image.imageUrl +'" class="image"></div>';
         slideBox += '</li>';
         document.getElementById('inner-slide').innerHTML += slideBox ;
       }
