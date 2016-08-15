@@ -1,0 +1,194 @@
+<!--
+1. Use HTML, CSS and JavaScript to build an image slideshow
+2. Do not use any third party slideshow, image or photo gallery plugins
+3. You may use a framework like jQuery or AngularJS
+4. Use deferred image loading
+   - load only two images on page load (the current slide and the next slide)
+   - load two images at a time on next button click (the next slide image and the slide image after next)
+5. User event tracking
+   - on each previous or next button click, call single pixel image below
+   - http://www.[yourwebsite].com/images/clear.gif
+6. Use Healthline API to get slideshow data:
+   - slideshow data URL: XXX
+   - use the following data items:
+   - Page title
+   - summary
+   - individual slide data (slides array):
+     - title
+     - image (image object)
+     - slide text content (body)
+7. Sort order filter:
+   - create an interface to allow the user to change the sort order of the slides
+   - two options: default, alpha
+   - sort by alpha on slide title
+   - default order is from JSON data
+8. Display one image at a time
+9. Must be a functional stand-alone working HTML page
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <style>
+  body {background:#c0d6e4;}
+    section {width: 690px;margin: 0 auto;font-family: 'Open Sans', sans-serif;padding:2%;background:#ffffff;}
+    h1 {font-weight:700;margin-bottom:0;color:#0D6E80;}
+    h3 {font-weight:400;font-size:0.77em;color:#4AADA7;margin-top:0;}
+    #slide-container {padding: 12px;border-top: thin solid #088da5;border-bottom: thin solid #088da5;overflow:hidden;}
+    #inner-slide {width: 0px;padding: 0;margin: 0;}
+    .slide {width: 600px;height: 300px;}
+    .left, .right {display: block;float: left;font-size: 0.9em;}
+    .left {width: 270px;padding-right: 20px;font-size:0.8em;color:#52777D;text-align:justify;}
+    .right img {width: 75%;background:#c0d6e4;padding:2%;}
+    .title {font-weight: bold;color:#11B3D0;padding-bottom:10px;}
+    p {margin-top:0;}
+    #back, #next {display: inline-block;}
+    #sort {margin-left: 265px;}
+    #sort, #sort h5 {display: inline;}
+    button {background:#8A9AA5;border:none;padding:4px 6px;border-radius:4px;color:#ffffff;}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+  <section>
+    <h1 id="page-title"></h1>
+    <h3 id="page-summary"></h3>
+    <div id="slide-container">
+      <ul id="inner-slide"></ul>
+    </div>
+    <button id="back">BACK</button>
+    <button id="next">NEXT</button>
+    <div id="sort">
+      <h5>Sort Order:</h5>
+      <button id="default">DEFAULT</button>
+      <button id="alpha">A-Z</button>
+    </div>
+  </section>
+  <img src="" data-src="http://www.[yourwebsite].com/images/clear.gif" id="pixel">
+  <script>
+  $(document).ready(function() {
+    $.ajax({
+      crossDomain: true,
+      type: "GET",
+      url: "https://api.yourwebiste.com/api/service/2.0/slideshow/content?partnerId=7eef498c-f7fa-4f7c-81fd-b1cc53ac7ebc&contentid=17103&includeLang=en",
+      dataType:"jsonp",
+      contentType: "application/jsonp"
+    })
+    .done(function(result) {
+        buildSlideShow(result.data);
+    });
+
+    function buildSlideShow(data) {
+
+      var pageTitle = data[0].title;
+      document.getElementById('page-title').innerHTML = pageTitle;
+      var pageSummary = data[0].summary;
+      document.getElementById('page-summary').innerHTML = pageSummary;
+      var slides = data[0].slides;
+      var slideDest = document.getElementById('slide-container').innerHTML;
+  
+      for(i=0; i < slides.length; i++) {
+        slideBox = '<li value="'+i+'" class="slide">';
+        slideBox += '<div class="left"><span class="title">'+ data[0].slides[i].title +'</span><br>';
+        slideBox += data[0].slides[i].body +'</div>';
+        slideBox += '<div class="right"><img src="" data-src="http://www.healthline.com'+ data[0].slides[i].image.imageUrl +'" class="image"></div>';
+        slideBox += '</li>';
+        document.getElementById('inner-slide').innerHTML += slideBox ;
+      }
+      var first = $('#slide-container ul li:first-child .image').attr("data-src");
+      $('#slide-container ul li:first-child .image').attr("src", first);
+      var last = $('#slide-container ul li:last-child .image').attr("data-src");
+      $('#slide-container ul li:last-child .image').attr("src", last);
+    }
+
+//SLIDESHOW VARIABLES
+  var slideCount = $('#slide-container ul li').length;
+  var sWidth = 510;
+  var sHeight = 270;
+  var slideTrueWidth = slideCount * sWidth;
+  $('#slide-container').css({ width: sWidth, height: sHeight });
+  $('#inner-slide').css({ width: slideTrueWidth});
+
+// BUTTON FUNCTIONS
+  function move(direction) {
+        
+    if(direction === "L") {
+      $('#inner-slide').animate({
+            left: + sWidth
+        }, 200, function () {
+            $('#inner-slide li:first-child .image').attr("src", "");
+            $('#inner-slide li:last-child').prependTo('#inner-slide');
+            $('#inner-slide li:last-child .image').attr("src", "");
+            first = $('#inner-slide li:first-child .image').attr("data-src");
+            $('#inner-slide li:first-child .image').attr("src", first);
+            $('#inner-slide').css('left', '');
+        });
+    }
+    else if(direction === "R") {
+      $('#inner-slide').animate({
+            left: - sWidth
+        }, 200, function () {
+            $('#inner-slide li:first-child').appendTo('#inner-slide');
+            first = $('#inner-slide li:first-child .image').attr("data-src");
+            $('#inner-slide li:first-child .image').attr("src", first);
+            $('#inner-slide li:last-child .image').attr("src", "");
+            $('#inner-slide').css('left', '');
+        });
+    }
+// ZEE BUG CATCHER
+    else {
+      console.log('ERROR');}
+    };
+
+// BUTTON ACTIONS
+
+  $('#back').click(function() {
+    pixelTrack('back');
+    move("L");
+  });
+
+  $('#next').click(function() {
+    pixelTrack('next');
+    move("R");
+  });
+
+// SORT BUTTON ACTIONS
+
+  $('#alpha').click(function() {
+    var liElements = $("li.slide").sort(function (a, b) {
+        return $(a).find(".title").text() > $(b).find(".title").text();
+    });
+    document.getElementById('inner-slide').innerHTML = "";
+    for(i=0; i < liElements.length; i++){
+      document.getElementById('inner-slide').innerHTML += liElements[i].outerHTML;
+    }
+  });
+
+  $('#default').click(function() {
+    var liElements = $("li.slide").sort(function (a, b) {
+        return $(a).attr('value') > $(b).attr('value');
+    });
+    document.getElementById('inner-slide').innerHTML = "";
+    for(i=0; i < liElements.length; i++){
+      document.getElementById('inner-slide').innerHTML += liElements[i].outerHTML;
+    }
+
+  });
+
+// PIXEL TRACKING FUNCTION
+
+  function pixelTrack(target) {
+    dir = target;
+    imgTarget = $('#pixel').attr("data-src");
+    urlSubmit = window.location.href;
+    finalUrl = imgTarget + '?' + urlSubmit + '&direction=' + dir;
+
+    $('#pixel').attr("src", finalUrl);
+  }
+
+
+
+  });
+  </script>
+</body>
+</html>
