@@ -100,9 +100,9 @@ $c    = array(); // contributors id
 $d    = array(); // contributors login id
 
 $servername = "localhost";
-$username   = "aminamat_usr";
-$password   = "dk6q6nvtkmo7";
-$dbname     = "aminamat_dbtest";
+$username   = "[usr]";
+$password   = "[pwd]";
+$dbname     = "[dbname]";
 $conn       = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
