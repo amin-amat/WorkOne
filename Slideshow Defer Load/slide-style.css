@@ -1,0 +1,81 @@
+/* SLIDESHOW CSS */
+body {
+	background:#c0d6e4;
+}
+section {
+	width: 690px;
+	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
+	padding:2%;
+	background:#ffffff;
+}
+h1 {
+	font-weight:700;
+	margin-bottom:0;
+	color:#0D6E80;
+}
+h3 {
+	font-weight:400;
+	font-size:0.77em;
+	color:#4AADA7;
+	margin-top:0;
+}
+#slide-container {
+	padding: 12px;
+	border-top: thin solid #088da5;
+	border-bottom: thin solid #088da5;
+	overflow:hidden;
+}
+#inner-slide {
+	width: 0px;
+	padding: 0;
+	margin: 0;
+}
+.slide {
+	width: 600px;
+	height: 300px;
+}
+.left,
+.right {
+	display: block;
+	float: left;
+	font-size: 0.9em;
+}
+.left {
+	width: 270px;
+	padding-right: 20px;
+	font-size:0.8em;
+	color:#52777D;
+	text-align:justify;
+}
+.right img {
+	width: 75%;
+	background:#c0d6e4;
+	padding:2%;
+}
+.title {
+	font-weight: bold;
+	color:#11B3D0;
+	padding-bottom:10px;
+}
+p {
+	margin-top:0;
+}
+#back,
+#next {
+	display: inline-block;
+}
+#sort {
+	margin-left: 265px;
+}
+#sort,
+#sort h5 {
+	display: inline;
+}
+button {
+	background:#8A9AA5;
+	border:none;
+	padding:4px 6px;
+	border-radius:4px;
+	color:#ffffff;
+}
