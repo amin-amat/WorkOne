@@ -368,6 +368,7 @@ footer nav ul li .link {
     .col.threes {
         width: 39.3%;
         min-height: 240px;
+        margin: 1.7px;
     }
     .threes:first-child,
     .threes:last-child {
@@ -377,10 +378,11 @@ footer nav ul li .link {
         padding: 0 0 10px;
     }
 }
-@media only screen and (min-width: 951px) and (max-width:1119px) {
+
+@media only screen and (min-width: 951px) and (max-width:1397px) {
     .threes:first-child,
     .threes:last-child {
-        width: 29.9%;
+        width: 29.8%;
     }
 }
 @media only screen and (max-width: 950px) {
@@ -531,14 +533,15 @@ footer nav ul li .link {
 }
 /* iPad Pro MQ */
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) {
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
     #main {
         padding-top: 355px;
         min-height: 1000px;
         background-size: cover;
     }
     .col.threes {
-        width: 39.6%;
+        width: 39.3%;
+        margin: 1.7px;
     }
     .threes:first-child,
     .threes:last-child {
