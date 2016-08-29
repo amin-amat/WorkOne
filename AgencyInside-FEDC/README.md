@@ -12,6 +12,10 @@ The device QA phase took about half the time as actual production, if not a litt
 
 On completing my QA, I fully optimized the jpeg being used and minified both the CSS and HTML. The final versions went through one last web performance test, links to the results are included below.
 
+Online DEMO:
+
+aminamatart.com/TEST4/
+
 
 Tested on :
 
