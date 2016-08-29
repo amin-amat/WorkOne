@@ -364,20 +364,26 @@ footer nav ul li .link {
         margin-top: 0;
     }
 }
-@media only screen and (min-width: 951px) and (max-width: 1240px) {
+@media only screen and (min-width: 951px) {
     .col.threes {
         width: 39.3%;
         min-height: 240px;
     }
     .threes:first-child,
     .threes:last-child {
-        width: 29.8%;
+        width: 29.99%;
     }
     .inner-block p {
         padding: 0 0 10px;
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 950px) {
+@media only screen and (min-width: 951px) and (max-width:1119px) {
+    .threes:first-child,
+    .threes:last-child {
+        width: 29.9%;
+    }
+}
+@media only screen and (max-width: 950px) {
     #main {
         padding-top: 100px;
         min-height: inherit;
@@ -497,7 +503,7 @@ footer nav ul li .link {
 }
 /* iPhone 5 MQ */
 
-@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
     .inner-block ul {
         column-gap: 10px;
         -webkit-column-gap: 10px;
@@ -507,31 +513,10 @@ footer nav ul li .link {
         white-space: normal;
     }
 }
-/* iPad MQ */
 
-@media only screen and (min-device-width: 768px) and (max-device-height: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-    #main .container {
-        display: block;
-    }
-    .col.threes {
-        width: 39.3%;
-        display: inline-block;
-    }
-    .inner-block ul {
-        column-count: 0;
-        -webkit-column-count: 0;
-        -moz-column-count: 0;
-        column-gap: 0;
-        -webkit-column-gap: 0;
-        -moz-column-gap: 0;
-    }
-    .inner-block ul li:nth-child(3) {
-        margin-bottom: 4px;
-    }
-}
 /* iPad Retina */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
     .col.threes {
         width: 39.3%;
     }
