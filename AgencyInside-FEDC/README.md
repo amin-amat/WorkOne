@@ -10,21 +10,21 @@ Once my first mobile build was complete, I then began checking the mobile CSS de
 
 The device QA phase took about half the time as actual production, if not a little longer, just to make sure that I could test as many scenarios as possible to offest having any bugs showing.
 
-On completeing my QA, I fully optimized the jpeg being used and minified both the CSS and HTML. The final versions went through one last web performance test, links to the results are included below.
+On completing my QA, I fully optimized the jpeg being used and minified both the CSS and HTML. The final versions went through one last web performance test, links to the results are included below.
 
 
 Tested on :
 
 Web Browsers:
 
-Safari
-Firefox
+Safari,
+Firefox,
 Chrome
 
 Mobile Emulator:
 
 Android:
-Samsung Galaxy
+Samsung Galaxy,
 LG Nexus
 
 iOS:
@@ -32,9 +32,9 @@ iPhone 5, 6, 6 Plus, 6s, 6s Plus
 iPad3, iPad4, iPad Retina, iPad Pro
 
 Devices:
-iPhone 6 Plus
-iPad Retina
-iPad Pro
+iPhone 6 Plus,
+iPad Retina,
+iPad Pro,
 Samsung Galaxy S4
 
 Web Page Performance Reports:
