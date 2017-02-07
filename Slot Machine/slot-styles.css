@@ -1,0 +1,84 @@
+html body {
+	background: #bec8c7;
+	margin: 0;
+}
+#main {
+	left: 33%;
+	right: -50%;
+	position: absolute;
+	top: 10%;
+	z-index: 100;
+}
+#container {
+	width: 340px;
+	height: 101px;
+	border: 6px solid #003333;
+	background: #003333;
+	overflow: hidden;
+	border-radius: 12px;
+}
+.slot {
+	border-left: thin solid gray;
+	border-right: thin solid gray;
+	width: 100px;
+	height: 100px;
+	float: left;
+	overflow: hidden;
+	margin: 0 6px;
+	background: #ffffff;
+}
+.slot:first-child {
+	border-left: none;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+.slot:last-child {
+	border-right: none;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+.slot .panel {
+	width: 100px;
+}
+img {
+	width: 100px;
+	height: 100px;
+}
+#button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-left: 150px;
+	margin-top: 2%;
+	border: 2px dotted #ff6f00;
+	display: block;
+	color: #ff6f00;
+	cursor: pointer;
+	background: transparent;
+	transition: background 300ms;
+	font-size: 60px;
+	line-height: 0.8em;
+	padding-left: 5px;
+}
+#button:hover{
+	background: #ff6f00;
+	transition: background 300ms;
+}
+#winning {
+	z-index: 500;
+	margin-top: 20px;
+	width: 350px;
+	font: 24px 'Amatic SC', cursive;
+	text-align: center;
+}
+#bkgnd {
+	background:#f5f2e9;
+	width: 1400px;
+	height: 900px;
+	margin: 0;
+	border-radius: 90px;
+	transform: rotate(8deg);
+	left: -5%;
+	right: 50%;
+}
+		
