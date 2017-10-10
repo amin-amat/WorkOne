@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script>
 /*
 Assign a random number to letter.
 */
@@ -15,11 +11,3 @@ if(randomizer === 23) {
  document.write("<b>" + randomizer + "</b> ")
  document.write(alpha[randomizer] + "<br>");
 }
-
-
-</script>
-</head>
-<body>
-
-</body>
-</html> 

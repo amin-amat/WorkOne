@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script>
 /*
 Using two arrays find the values that match and print to console.
 */
@@ -21,12 +17,3 @@ for(i=0; i < arrayOne.length; i++){
 }
 
 }
-
-</script>
-</head>
-<body>
-
-
-
-</body>
-</html> 

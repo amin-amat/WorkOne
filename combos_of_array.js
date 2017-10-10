@@ -1,8 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<script>
-
 document.write(arrCombo(["a","b","c","d","e","f"]));
 
 function arrCombo(arrC) {
@@ -19,12 +14,3 @@ var filterArr = function(prefix, arrC) {
 filterArr(' ', arrC);
 return emptyArr;
 }
-
-
-</script>
-</head>
-
-<body>
-</body>
-
-</html>

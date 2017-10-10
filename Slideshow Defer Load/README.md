@@ -1,3 +1,5 @@
+Slide Show JS : README::
+
 OBJECTIVE:
 
 1. Use HTML, CSS and JavaScript to build an image slideshow

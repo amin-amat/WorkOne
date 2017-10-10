@@ -10,17 +10,12 @@ Assume the user’s choice has already been stored as 1, 2, or 3, and is passed 
  
 Code:
 */
-<script>
 userChoice = prompt('Select 1, 2 or 3');
 
 adventureSelector(userChoice);
 
 function adventureSelector(userChoice) {
-
-var a = userChoice;
-
-var check =  a > 2 ? "The Caves of Catastrophe!" : a > 1 ? "Looks like you want the Lake of Despair!" : "You selected the Vines of Doom!";
-
-return alert(check);
+	var a = userChoice;
+	var check =  a > 2 ? "The Caves of Catastrophe!" : a > 1 ? "Looks like you want the Lake of Despair!" : "You selected the Vines of Doom!";
+	return alert(check);
 }
-</script>
