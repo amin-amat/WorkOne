@@ -1,0 +1,139 @@
+/*REFACTORED CSS FILE POST SASS COMPILER*/
+html body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+.blue {
+	color: #005183;
+}
+a {
+	color: #00b2e3;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: normal;
+}
+h1 {
+	font-size: 30px;
+}
+h1, h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+h5 span {
+	font-weight: normal;
+}
+p {
+	line-height: 1.6em;
+}
+.mid-txt {
+	font-size: 13px;
+}
+section {
+	margin: 0 auto;
+}
+.container {
+	max-width: 1403px;
+	margin: 0 auto;
+}
+.full {
+	width: 960px;
+}
+header {
+	background: #005183;
+	width: 100%;
+	height: 47px;
+	line-height: 3.9em;
+	margin-bottom: 48px;
+}
+#masthead {
+	text-align: center;
+	margin-bottom: 61px;
+}
+#masthead h5 {
+	font-size: 16px;
+	font-weight: normal;
+	color: #666666;
+}
+nav {
+	margin-bottom: 54px;
+	height: 43px;
+    border-bottom: thin solid #ccc;
+}
+#nav_tabs,
+#side_tabs {
+	list-style-type: none;
+	padding: 0;
+}
+#nav_tabs li,
+#side_tabs li {
+	cursor: pointer;
+}
+#nav_tabs {
+	height: 42px;
+    background: #f5f5f5;
+    border: thin solid #cccccc;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font: 15px Arial,sans-serif;
+    line-height: 2.8em;
+    width: fit-content;
+}
+#nav_tabs li {
+	display: inline;
+	padding: 13px 20px;
+	border-right: thin solid #cccccc;
+}
+#nav_tabs li:last-child {
+	border-right: none;
+}
+#nav_tabs li.active,
+#nav_tabs li:hover {
+	background: #ffffff;
+	padding-top: 12px;
+	border-top: 1px solid #cccccc;
+	border-bottom: thin solid #ffffff;
+}
+#nav_tabs li.active:first-child,
+#nav_tabs li.active:first-child:hover,
+#nav_tabs li:first-child:hover {
+	border-top-left-radius: 8px;
+}
+#nav_tabs li.active:last-child,
+#nav_tabs li.active:last-child:hover,
+#nav_tabs li:last-child:hover {
+	border-top-right-radius: 8px;
+}
+sidebar {
+	width: 30%;
+	display: inline-block;
+}
+sidebar h3 {
+	-webkit-margin-before: 0;
+}
+#side_tabs h4,
+#side_tabs h6 {
+	-webkit-margin-after: 0;
+	-webkit-margin-before: 0;
+}
+#side_tabs h6 {
+	font-weight: normal;
+}
+#side_tabs li {
+	padding: 15px 11px;
+	border-top: thin solid #cccccc;
+	line-height: 1.2em;
+}
+#side_tabs li:last-child {
+	border-bottom: thin solid #cccccc;
+}
+#side_tabs li.active,
+#side_tabs li:hover {
+	background: #f5f5f5;
+}
+section#content {
+	display: inline-block;
+	width: 64%;
+	vertical-align: top;
+	padding-left: 51px;
+}
