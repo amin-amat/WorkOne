@@ -1,3 +1,14 @@
-JS & PHP :: Challenges & Experimentation README ::
+<strong>JS & PHP :: README</strong>
 
-These collectionS of scripts offer a good overview of not just experimentation but also code examples of several production pieces whose functionality I was able to display here for further study.
+These collections of scripts offer a good overview of not just experimentation but also code samples of several production pieces that I am to display here for further study.
+<br>
+Broken into several folders:
+<br>
+<h3>Code Tests
+<p>Code examples I've written up for various code tests given to me for evaluation.</p>
+<h3>Snippets/Exercises
+<p>Code snippets written to solve some problems that I wanted to solve.</p>
+<h3>Spare Time Fun
+<p>Collection of ideas that I wrote up for fun.</p>
+<h3>WP-JS Scripts
+<p>Collection of Wordpress JS scripts.</p>

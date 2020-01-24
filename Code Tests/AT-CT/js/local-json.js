@@ -1,13 +1,12 @@
-var url               = "./sessions.json";
-var tabArr            = [];
-var nav_tabs          = "";
-var content_body      = "";
-var nav_target        = document.querySelector("#nav_tabs");
-var side_target       = document.querySelector("#side_tabs");
-var content_target    = document.querySelector("#content");
+var tabArr = [];
+var nav_tabs = "";
+var content_body = "";
+var nav_target = document.querySelector("#nav_tabs");
+var side_target = document.querySelector("#side_tabs");
+var content_target = document.querySelector("#content");
 
 function initLoad() {
-  $.getJSON(url, function (result) {
+  $.getJSON('sessions.json', function (result) {
     $.each(result.Items, function (i) {
         if (tabArr[0] && result.Items[i].Track.Title === tabArr[0]) {
           sidebarBuild(result.Items[i], i);
@@ -80,8 +79,7 @@ function initLoad() {
     $.each(side_inner, function (i) {
       side_inner[i].classList.toggle("active");
     })
-
-    $.getJSON(url, function (result) {
+    $.getJSON('sessions.json', function (result) {
       content_body   += "<article>";
       content_body  += "<h1 class='blue'>" + result.Items[item_id].Title + "</h1>";
       if (result.Items[item_id].Speakers !== undefined) {
