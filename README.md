@@ -2,7 +2,7 @@
 
 These collections of scripts offer a good overview of not just experimentation but also code samples of several production pieces that I am to display here for further study.
 
-<p>Main Directory:</p>
+<h2>Main Directory:</h2>
 <p>Some misc JS files that have yet to be classified.</p>
 <h3>Code Tests</h3>
 <p>Code examples I've written up for various code tests given to me for evaluation.</p>
