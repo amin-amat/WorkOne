@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+	.wrapper, section {width:800px;height:600px;overflow:hidden;margin:0 auto;}
+	section {position:relative;z-index:100;top:0;transform-origin: right;transition: all 0.45s;}
+	#button {position:absolute;top:20%;margin-left: 50px;display:none;}
+	section label {position:absolute;top:20%;margin-left: 50px;}
+	#menu {background:gray;color:black;position:absolute;top:0;bottom:0;height:600px;margin-top:8px;width:150px;}
+	li {font-weight: bold;}
+	ul li {list-style:none;margin-top:10px;}
+	li b {opacity:0;transition: all 0.4s;transform: translateX(-15px);}
+	.kazam {display:block;transition: all 0.4s;transition-delay: 0.04s;opacity:0;height:0;}
+	.poof {display:none;transition: all 0.4s;transition-delay: 0.04s;}
+
+	#button:checked ~ section {
+		transform: translateX(150px);}
+
+	#button:checked ~ section label {
+	 	color:#ffffff;}
+
+	#button:checked ~ #menu li:nth-child(1) b {
+	 	transition-delay: 0.12s;
+	 	transform: translateX(0);
+	 	opacity:1; }
+
+	#button:checked ~ #menu li:nth-child(2) b {
+	 	transition-delay: 0.24s;
+	 	transform: translateX(0);
+	 	opacity:1; }
+
+	#button:checked ~ #menu li:nth-child(3) b {
+	 	transition-delay: 0.36s;
+	 	transform: translateX(0);
+	 	opacity:1; }
+
+	#button:checked ~ #menu li:nth-child(4) b {
+	 	transition-delay: 0.48s;
+	 	transform: translateX(0);
+	 	opacity:1; }
+
+	 b {color:#ffffff;cursor:pointer;}
+	 b:hover {color:darkgray;transition-delay: 0.02s;transition: all 0.02s;}
+	 ul.drop {opacity:0;margin-left:-30px;overflow:hidden;}
+	 .drop li {color: #ffffff;font-weight: normal;}
+	 
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('.dropdown').click(function() {
+				$(this).find('.drop').removeClass('poof').addClass('kazam').animate({height: '55px'},200).fadeTo('slow',1.0);
+			});
+			$('.drop').mouseleave(function() {
+				$(this).animate({height: '0'},300).delay(400).fadeTo(100,0);
+			});
+		})
+	</script>
+</head>
+
+<body>
+
+<div class="wrapper">
+	<input type="checkbox" id="button">
+
+<div id="menu">
+		<ul class="sidelinks">
+			<li><b>HOME</b></li>
+			<li class="dropdown"><b>ABOUT</b>
+				<ul class="drop poof">
+					<li><b>EGO</b></li>
+					<li><b>ID</b></li>
+				</ul>
+			</li>
+			<li><b>CONTACT</b></li>
+			<li><b>NEWS</b></li>
+		</ul>
+	</div>
+
+
+	<section>
+		<label for="button">
+			<span> click </span>
+		</label>
+	<img src="http://images.latinpost.com/data/images/full/21286/will-ferrell-as-jacobim-mugatu-in-zoolander.jpg">
+	</section>
+
+	
+
+</div>
+</body>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+</html>

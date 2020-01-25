@@ -1,0 +1,29 @@
+ body,
+ #carousel-container #carousel  {
+    margin: 0px;
+}
+#carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+#carousel-container #carousel {
+    padding: 0px;
+    position: relative;
+}
+#previous,
+#next,
+.carousel-item,
+.carousel-dots-nav-item {
+    display: inline-block;
+}
+#title {
+    display: block;
+}
+#previous,
+#next,
+.carousel-dots-nav-item {
+    cursor: pointer;
+}
+.carousel-dots-nav-item {
+    margin: 10px 20px;
+}
