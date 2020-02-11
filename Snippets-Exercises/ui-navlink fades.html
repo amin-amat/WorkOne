@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+       $(".test").mouseover(function() {
+        $(this).animate({
+          borderColor: "#999",
+          borderWidth: "thin"
+          }, 1000 );
+       });
 
-<script>
-$(document).ready(function(){
+      $(".test").mouseleave(function() {
+       $(this).animate({
+          borderColor: "#fff",
+          borderWidth: "thin"
+          }, 1000 ); 
+       $(".reveal").fadeOut();
+        $(".subreveal1").delay().fadeOut();
+        $(".subreveal2").delay().fadeOut();
+        $(".subreveal3").delay().fadeOut();
+        $(".subreveal4").delay().fadeOut();
+       });
 
- $(".test").mouseover(function() {
-  $(this).animate({
-    borderColor: "#999",
-    borderWidth: "thin"
-    }, 1000 );
- });
-
-$(".test").mouseleave(function() {
- $(this).animate({
-    borderColor: "#fff",
-    borderWidth: "thin"
-    }, 1000 ); 
- $(".reveal").fadeOut();
-  $(".subreveal1").delay().fadeOut();
-  $(".subreveal2").delay().fadeOut();
-  $(".subreveal3").delay().fadeOut();
-  $(".subreveal4").delay().fadeOut();
- });
-
-  $(".test").click(function(){
-   $(".reveal").fadeIn();
-   $(".subreveal1").delay(325).fadeIn();
-   $(".subreveal2").delay(525).fadeIn();
-   $(".subreveal3").delay(725).fadeIn();
-   $(".subreveal4").delay(925).fadeIn();
-    });
-  
-});
-</script>
-
-</head>
-<body>
-<div class="test" style="width:75px;height:25px;border:thin solid white;">CLICK</div>
-
-<div class="reveal" style="display:none;">TEST</div>
-<div class="subreveal1" style="display:none;">1</div>
-<div class="subreveal2" style="display:none;">2</div>
-<div class="subreveal3" style="display:none;">3</div>
-<div class="subreveal4" style="display:none;">4</div>
-
-</body>
+        $(".test").click(function(){
+         $(".reveal").fadeIn();
+         $(".subreveal1").delay(325).fadeIn();
+         $(".subreveal2").delay(525).fadeIn();
+         $(".subreveal3").delay(725).fadeIn();
+         $(".subreveal4").delay(925).fadeIn();
+          });
+        
+      });
+    </script>
+  </head>
+  <body>
+    <div class="test" style="width:75px;height:25px;border:thin solid white;">CLICK</div>
+    <div class="reveal" style="display:none;">TEST</div>
+    <div class="subreveal1" style="display:none;">1</div>
+    <div class="subreveal2" style="display:none;">2</div>
+    <div class="subreveal3" style="display:none;">3</div>
+    <div class="subreveal4" style="display:none;">4</div>
+  </body>
 </html>

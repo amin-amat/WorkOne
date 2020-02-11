@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     var slideShow = function(target) {
         //SLIDESHOW VARIABLES
         var slideTrueWidth = slideCount * sWidth;

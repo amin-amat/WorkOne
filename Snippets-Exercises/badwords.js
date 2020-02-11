@@ -17,7 +17,7 @@ var badwords = ['window', 'chair', 'knockings'];
  
 // Fill in function body here
 var hasBadwords = function (message, index) {
-	for(a of badwords){
+	for (a of badwords){
   	matchSearch = message.search(a);
     if(Boolean(matchSearch != -1) ){
     	console.log('true' + " :: "+ a + " : " + message);

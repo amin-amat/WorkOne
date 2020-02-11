@@ -7,7 +7,6 @@ var facebookAPI = 'https://graph.facebook.com/?id=';
 function runTargets() {
     // LINKEDIN
     var api_linkedin = linkedinAPI + homeTarget;
-    // 
     $.getJSON(api_linkedin, { dataType: "jsonp", async: false }, function(result) {
         // targeting gplus div
         $('.gplus').html(result.count);

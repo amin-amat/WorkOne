@@ -1,78 +1,64 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>SLIDESHOW TEST</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<style>
+		#slide-container {position:relative;overflow:hidden;margin: 20px auto 0 auto;}
+		#slide-container ul {position:relative;list-style:none;margin:0;padding:0;height:200px;}
+		#slide-container ul li {width:600px;height:200px;position:relative;display:block;background:#ccc;float:left;margin:0;padding:0;}
+		</style>
+		<script>
+			$(document).ready(function() {
+				var slideCount = $('#slide-container ul li').length;
+				var sWidth = 600;
+				var sHeight = 200;
+				var slideTrueWidth = slideCount * sWidth;
+				$('#slide-container').css({ width: sWidth, height: sHeight });
+				$('#slide-container ul').css({ width: slideTrueWidth, marginLeft: - sWidth });
+				$('#slide-container ul li:last-child').prependTo('#slide-container ul');
 
-<head>
-<title>SLIDESHOW TEST</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<style>
-#slide-container {position:relative;overflow:hidden;margin: 20px auto 0 auto;}
-#slide-container ul {position:relative;list-style:none;margin:0;padding:0;height:200px;}
-#slide-container ul li {width:600px;height:200px;position:relative;display:block;background:#ccc;float:left;margin:0;padding:0;}
-</style>
+				function move(direction) {
+					if(direction === "L") {
+						$('#slide-container ul').animate({
+					            left: + sWidth
+					        }, 200, function () {
+					            $('#slide-container ul li:last-child').prependTo('#slide-container ul');
+					            $('#slide-container ul').css('left', '');
+					        });
+					}
+					else if(direction === "R") {
+						$('#slide-container ul').animate({
+					            left: - sWidth
+					        }, 200, function () {
+					            $('#slide-container ul li:first-child').fadeIn().appendTo('#slide-container ul');
+					            $('#slide-container ul').css('left', '');
+					        });
+					}
+					// ZEE BUG CATCHER
+					else {console.log('ERROR');}
+				    };
+				$('#back').click(function() {
+					move("L");
+				});
 
-
-<script>
-
-$(document).ready(function() {
-
-var slideCount = $('#slide-container ul li').length;
-var sWidth = 600;
-var sHeight = 200;
-var slideTrueWidth = slideCount * sWidth;
-	
-$('#slide-container').css({ width: sWidth, height: sHeight });
-$('#slide-container ul').css({ width: slideTrueWidth, marginLeft: - sWidth });
-$('#slide-container ul li:last-child').prependTo('#slide-container ul');
-
-function move(direction) {
-        
-if(direction === "L") {
-	$('#slide-container ul').animate({
-            left: + sWidth
-        }, 200, function () {
-            $('#slide-container ul li:last-child').prependTo('#slide-container ul');
-            $('#slide-container ul').css('left', '');
-        });
-}
-else if(direction === "R") {
-	$('#slide-container ul').animate({
-            left: - sWidth
-        }, 200, function () {
-            $('#slide-container ul li:first-child').fadeIn().appendTo('#slide-container ul');
-            $('#slide-container ul').css('left', '');
-        });
-}
-// ZEE BUG CATCHER
-else {console.log('ERROR');}
-    };
-
-
-$('#back').click(function() {
-	move("L");
-});
-
-$('#next').click(function() {
-	move("R");
-});
-
-});
-
-</script>
-
-</head>
-
-<body>
-<div id="slide-container">
-	<ul>
-		<li><img src="http://image.shutterstock.com/display_pic_with_logo/60008/60008,1172199258,2/stock-photo-new-york-city-2740583.jpg" /></li>
-		<li><img src="http://fc04.deviantart.net/fs29/i/2008/142/2/0/city_stock_by_z_stock.jpg" /></li>
-		<li><img src="http://image.shutterstock.com/display_pic_with_logo/79044/79044,1206309060,1/stock-photo-future-city-10679005.jpg" /></li>
-		<li><img src="http://thumb7.shutterstock.com/display_pic_with_logo/379072/134653565/stock-photo-manhattan-at-night-new-york-city-view-from-brooklyn-134653565.jpg" /></li>
-		<li><img src="http://fc00.deviantart.net/fs16/i/2007/194/e/3/City_Stock_5_by_Peace_of_Art.jpg" /></li>	
-	</ul>
-</div>
-<div id="back">BACK</div>
-<div id="next">NEXT</div>
-</body>
-
+				$('#next').click(function() {
+					move("R");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="slide-container">
+			<ul>
+				<li><img src="http://image.shutterstock.com/display_pic_with_logo/60008/60008,1172199258,2/stock-photo-new-york-city-2740583.jpg" /></li>
+				<li><img src="http://fc04.deviantart.net/fs29/i/2008/142/2/0/city_stock_by_z_stock.jpg" /></li>
+				<li><img src="http://image.shutterstock.com/display_pic_with_logo/79044/79044,1206309060,1/stock-photo-future-city-10679005.jpg" /></li>
+				<li><img src="http://thumb7.shutterstock.com/display_pic_with_logo/379072/134653565/stock-photo-manhattan-at-night-new-york-city-view-from-brooklyn-134653565.jpg" /></li>
+				<li><img src="http://fc00.deviantart.net/fs16/i/2007/194/e/3/City_Stock_5_by_Peace_of_Art.jpg" /></li>	
+			</ul>
+		</div>
+		<div id="back">BACK</div>
+		<div id="next">NEXT</div>
+	</body>
 </html>

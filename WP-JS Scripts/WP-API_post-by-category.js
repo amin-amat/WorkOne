@@ -14,7 +14,7 @@ function getData(category) {
   } else {
     var pag_dest = targetUrl + cacheStamp;
   }
-    $.getJSON(pag_dest, function(result) {
+    $.getJSON(pag_dest, function (result) {
       if (!result.length) {
         document.getElementById("loadmore").classList.add('ap-hide');
         loading.classList.remove('in');

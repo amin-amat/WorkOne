@@ -62,7 +62,7 @@ $(document).ready(function() {
         listingView();
     });
 });
-// global storage
+// storage
 var oneSource = {};
 var tempSource = {};
 
