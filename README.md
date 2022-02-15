@@ -13,12 +13,4 @@ These collections of scripts offer a good overview of not just experimentation b
 <h3>WP-JS Scripts</h3>
 <p>Collection of Wordpress JS scripts.</p>
 
-<h2>Additional Reference</h2>
-<p>For live examples of my work do visit one of the following:</p>
-<ul>
-	<li>www.cultureamp.com</li>
-	<li>www.cultureamp.com/blog</li>
-	<li>www.cultureamp.com/podcast</li>
-	<li>careerhub.peoplegeeks.com</li>
-</ul>
 <p>You can also find me on Instagram, LinkedIn and Facebook.</p>
