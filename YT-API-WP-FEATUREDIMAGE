@@ -1,0 +1,42 @@
+<?php
+            $uploaddir = wp_upload_dir();
+            $yt_id = get_field('youtube_id'); // USES ACF TO GRAB YOUTUBE ID
+            $filename = $yt_id .'.jpg';
+            if ( get_post_type( $post_id ) === 'TARGET_POST-TYPE' && !file_exists($uploaddir['path'] . '/' . $filename)) {
+                $url = "https://www.googleapis.com/youtube/v3/videos?part=snippet&maxResults=1&id=". $yt_id ."&key=YT-KEY-GOES-HERE";
+                $get_data = callAPI('GET', $url, false);
+                $response = json_decode($get_data, true);
+                $fileURL = $response[items][0][snippet][thumbnails][maxres][url];
+                $post_id = get_the_ID();
+                if (!file_exists($uploaddir['path'] . '/' . $filename)) {
+                    $uploadfile = $uploaddir['path'] . '/' . $filename;
+                    $contents = file_get_contents($fileURL);
+                    $savefile = fopen($uploadfile, 'w');
+                    fwrite($savefile, $contents);
+                    fclose($savefile); 
+                    $uploadfileWP = wp_upload_bits( $filename, null, file_get_contents($uploadfile));
+                } else {
+                    $uploadfile = $uploaddir['path'] . '/' . $filename;
+                    $uploadfileWP = wp_upload_bits( $filename, null, file_get_contents($uploadfile));
+                }
+                if ( !$uploadfileWP['error'] ) {
+                    // if succesfull insert the new file into the media library (create a new attachment post type).
+                    $wp_filetype = wp_check_filetype(basename($filename), null );
+                    $attachment = array(
+                        'post_mime_type' => $wp_filetype['type'],
+                        'post_parent'    => $post_id,
+                        'post_title'     => preg_replace('/\.[^.]+$/', '', basename($filename)),
+                        'post_content'   => '',
+                        'post_status'    => 'inherit'
+                    );
+                    $attachment_id = wp_insert_attachment( $attachment, $uploadfileWP[file], $post_id );
+                    
+                    if ( ! is_wp_error( $attachment_id ) ) {
+                        require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+                        $attachment_data = wp_generate_attachment_metadata( $attachment_id, $uploadfileWP[file] );
+                        wp_update_attachment_metadata( $attachment_id,  $attachment_data );
+                        set_post_thumbnail( $post_id, $attachment_id );
+                    }
+                }
+            }
+        ?>
