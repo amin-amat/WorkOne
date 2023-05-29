@@ -1,0 +1,94 @@
+
+html
+    font-family: 'Quicksand', sans-serif
+
+p
+    margin: 6px 0 !important
+
+nav 
+    padding: 20px 0 40px
+
+.search 
+    &__txt 
+        border: thin solid lightgrey
+        padding-right: 40px
+    &__select,
+    &__txt 
+        padding: 8px 37px 8px 12px
+        border-radius: 50px
+        -webkit-border-radius: 50px
+        -moz-border-radius: 50px
+        -ms-border-radius: 50px
+        -o-border-radius: 50px
+
+#searchsubmit
+        width:32px
+        height: 32px
+        position: absolute
+        right: 1px
+        top: 8px
+        padding: 0
+        cursor: pointer
+
+#clear
+    position: absolute
+    cursor: pointer
+    top: 8px
+    right: 10px
+    
+section 
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    row-gap: 20px
+    column-gap: 20px
+    align-content: center
+    transition: 500ms
+    -webkit-transition: 500ms
+    -moz-transition: 500ms
+    -ms-transition: 500ms
+    -o-transition: 500ms
+
+article 
+    max-width: 300px
+    width: 100%
+    padding: 12px
+    border: thin solid lightgrey
+    border-radius: 20px 0 0 0
+    -webkit-border-radius: 20px 0 0 0
+    -moz-border-radius: 20px 0 0 0
+    -ms-border-radius: 20px 0 0 0
+    -o-border-radius: 20px 0 0 0
+    .fab 
+        margin-left: 12px
+        color: lightgrey
+        &:hover::before 
+            color: lightgrey
+        
+        &::before 
+            color: slategrey
+            transition: 400ms
+            -webkit-transition: 400ms
+            -moz-transition: 400ms
+            -ms-transition: 400ms
+            -o-transition: 400ms
+        
+.center 
+    display: block
+    margin: 0 auto
+
+.center__block 
+    display: flex
+    justify-content: center
+    align-content: center
+    gap: 20px
+
+.bold 
+    font-weight: 600
+
+.hide 
+    display: none
+
+.pos__rel
+    position: relative !important
+
